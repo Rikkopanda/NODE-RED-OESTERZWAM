@@ -26,7 +26,7 @@
     {
         "id": "fd773dbbcabdd020",
         "type": "ui_group",
-        "name": "Our Dashboard",
+        "name": "Realtime Log",
         "tab": "c36cb0c02a3b749c",
         "order": 1,
         "disp": true,
@@ -232,13 +232,43 @@
         "hidden": false
     },
     {
+        "id": "17c711e076167169",
+        "type": "ui_group",
+        "name": "set and save target values",
+        "tab": "c36cb0c02a3b749c",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f12479a13dc84029",
+        "type": "ui_tab",
+        "name": "test files & graphs",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8e639ac06647d5d1",
+        "type": "ui_group",
+        "name": "default test files&graphs",
+        "tab": "f12479a13dc84029",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "28c056dc.6e2fba",
         "type": "comment",
         "z": "b63fcb1813d36138",
-        "name": "### This scenario is permanent and requires a file to read an write to ###",
+        "name": "### meet en regeling flow",
         "info": "",
-        "x": 360,
-        "y": 1400,
+        "x": 150,
+        "y": 1460,
         "wires": []
     },
     {
@@ -252,8 +282,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 760,
-        "y": 1420,
+        "x": 720,
+        "y": 1540,
         "wires": [
             []
         ]
@@ -279,8 +309,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 1460,
+        "x": 140,
+        "y": 1580,
         "wires": [
             [
                 "efd15a17.372ff8"
@@ -299,8 +329,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 380,
-        "y": 1460,
+        "x": 340,
+        "y": 1580,
         "wires": [
             [
                 "dec834a4.768678"
@@ -331,15 +361,16 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "x": 550,
-        "y": 1460,
+        "x": 510,
+        "y": 1580,
         "wires": [
             [
                 "a9184512.6d0338"
             ],
             [
                 "dde00f00d7f9960d",
-                "455dd599cffdcc25"
+                "455dd599cffdcc25",
+                "68133df8b506b94b"
             ]
         ]
     },
@@ -596,8 +627,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
-        "y": 1600,
+        "x": 710,
+        "y": 1720,
         "wires": []
     },
     {
@@ -606,8 +637,8 @@
         "z": "b63fcb1813d36138",
         "name": "OUT: 2, 3 -> true or false",
         "info": "",
-        "x": 810,
-        "y": 1660,
+        "x": 770,
+        "y": 1780,
         "wires": []
     },
     {
@@ -622,11 +653,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1610,
-        "y": 1460,
+        "x": 1570,
+        "y": 1580,
         "wires": [
             [
-                "f370204f4ddf9fe2"
+                "f370204f4ddf9fe2",
+                "064186452ffb49d5"
             ],
             [
                 "fcac97b80585a0d3"
@@ -656,11 +688,12 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 1320,
-        "y": 1460,
+        "x": 1280,
+        "y": 1580,
         "wires": [
             [
-                "f5e37a9d90b6df88"
+                "f5e37a9d90b6df88",
+                "e5479bacb22da883"
             ]
         ],
         "outputLabels": [
@@ -680,8 +713,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1860,
-        "y": 1420,
+        "x": 1820,
+        "y": 1540,
         "wires": []
     },
     {
@@ -705,8 +738,8 @@
         "topic": "manual",
         "payload": "true",
         "payloadType": "bool",
-        "x": 1050,
-        "y": 1320,
+        "x": 990,
+        "y": 1460,
         "wires": [
             [
                 "6e95d6a3bdf9ef71"
@@ -720,7 +753,7 @@
         "name": "",
         "label": "temp",
         "tooltip": "",
-        "group": "bfe48a3e.1b0f4",
+        "group": "17c711e076167169",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -746,7 +779,7 @@
         "name": "",
         "label": "vocht gehalte [%]",
         "tooltip": "",
-        "group": "bfe48a3e.1b0f4",
+        "group": "17c711e076167169",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -772,7 +805,7 @@
         "name": "",
         "label": "CO2 gehalte [ppm]",
         "tooltip": "",
-        "group": "bfe48a3e.1b0f4",
+        "group": "17c711e076167169",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -796,7 +829,7 @@
         "type": "ui_button",
         "z": "b63fcb1813d36138",
         "name": "",
-        "group": "bfe48a3e.1b0f4",
+        "group": "17c711e076167169",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -933,20 +966,20 @@
         "id": "7229a2e9e0dcd20d",
         "type": "ui_text",
         "z": "b63fcb1813d36138",
-        "group": "bfe48a3e.1b0f4",
+        "group": "17c711e076167169",
         "order": 5,
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "text",
+        "label": "written to auto_klimaat_setting_01:",
         "format": "{{msg.payload}}",
-        "layout": "row-spread",
+        "layout": "col-center",
         "className": "",
         "style": false,
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1250,
+        "x": 1340,
         "y": 1220,
         "wires": []
     },
@@ -983,8 +1016,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1860,
-        "y": 1460,
+        "x": 1820,
+        "y": 1580,
         "wires": []
     },
     {
@@ -1000,8 +1033,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1860,
-        "y": 1500,
+        "x": 1820,
+        "y": 1620,
         "wires": []
     },
     {
@@ -1018,10 +1051,58 @@
         "outputs": 1,
         "options": [
             {
-                "name": "schedule1",
-                "topic": "topic1",
+                "name": "schedule3",
+                "topic": "cron 10 *",
                 "payloadType": "bool",
                 "payload": "true",
+                "expressionType": "cron",
+                "expression": "10 * * * * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            },
+            {
+                "name": "schedule4",
+                "topic": "cron 30 *",
+                "payloadType": "bool",
+                "payload": "true",
+                "expressionType": "cron",
+                "expression": "30 * * * * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            },
+            {
+                "name": "schedule5",
+                "topic": "cron 0 *",
+                "payloadType": "bool",
+                "payload": "true",
+                "expressionType": "cron",
+                "expression": "0 * * * * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            },
+            {
+                "name": "schedule6",
+                "topic": "cron 50 *",
+                "payloadType": "bool",
+                "payload": "true",
+                "expressionType": "cron",
+                "expression": "50 * * * * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            },
+            {
+                "name": "schedule8",
+                "topic": "cron 40 *",
+                "payloadType": "default",
+                "payload": "",
                 "expressionType": "cron",
                 "expression": "40 * * * * * *",
                 "location": "",
@@ -1030,10 +1111,10 @@
                 "solarEvents": "sunrise,sunset"
             },
             {
-                "name": "schedule2",
-                "topic": "topic2",
-                "payloadType": "bool",
-                "payload": "true",
+                "name": "schedule7",
+                "topic": "cron 20 *",
+                "payloadType": "default",
+                "payload": "",
                 "expressionType": "cron",
                 "expression": "20 * * * * * *",
                 "location": "",
@@ -1042,11 +1123,12 @@
                 "solarEvents": "sunrise,sunset"
             }
         ],
-        "x": 920,
-        "y": 1400,
+        "x": 880,
+        "y": 1520,
         "wires": [
             [
-                "455dd599cffdcc25"
+                "455dd599cffdcc25",
+                "01bcf6cf13ceeb42"
             ]
         ]
     },
@@ -1058,8 +1140,8 @@
         "operation": "AND",
         "inputCount": 2,
         "topic": "result",
-        "x": 1060,
-        "y": 1460,
+        "x": 1020,
+        "y": 1580,
         "wires": [
             [
                 "6e95d6a3bdf9ef71",
@@ -1080,8 +1162,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 1540,
+        "x": 1180,
+        "y": 1660,
         "wires": []
     },
     {
@@ -1097,7 +1179,10 @@
                 "1456caf1e7d1f821",
                 "4f1bf5d271788713",
                 "4aa51a86fafac4c5",
-                "db982fc11af6b286"
+                "db982fc11af6b286",
+                "5beacda8964c10d9",
+                "c866f0618060149f",
+                "fbbd11def004e3ae"
             ]
         ]
     },
@@ -1109,7 +1194,7 @@
         "canid": "004",
         "payload": "FFFF",
         "x": 340,
-        "y": 1780,
+        "y": 2020,
         "wires": []
     },
     {
@@ -1130,7 +1215,7 @@
         "payload": "hello",
         "payloadType": "str",
         "x": 130,
-        "y": 1780,
+        "y": 2020,
         "wires": [
             [
                 "195d5161839dc739"
@@ -1171,7 +1256,7 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 1780,
+        "y": 2020,
         "wires": [
             []
         ]
@@ -1276,20 +1361,20 @@
         "name": "",
         "group": "fd773dbbcabdd020",
         "order": 7,
-        "width": 0,
-        "height": 0,
-        "label": "Temperatuur",
+        "width": "0",
+        "height": "0",
+        "label": "realtime_grafiek",
         "chartType": "line",
-        "legend": "false",
+        "legend": "true",
         "xformat": "HH:mm",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
         "ymin": "-10",
-        "ymax": "50",
-        "removeOlder": "1",
+        "ymax": "150",
+        "removeOlder": "3",
         "removeOlderPoints": "",
-        "removeOlderUnit": "86400",
+        "removeOlderUnit": "60",
         "cutout": 0,
         "useOneColor": false,
         "useUTC": false,
@@ -1307,8 +1392,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 490,
-        "y": 760,
+        "x": 500,
+        "y": 740,
         "wires": [
             []
         ]
@@ -1372,7 +1457,64 @@
         "type": "function",
         "z": "b63fcb1813d36138",
         "name": "function 1",
-        "func": "\nvar co2 = global.get(\"g_meet_CO2_01\");\nvar temp = global.get(\"g_meet_temp_01\");\nvar vocht = global.get(\"g_meet_vocht_01\");\n\nreturn {payload: {co2, vocht, temp}};\n",
+        "func": "\nvar co2 = global.get(\"g_meet_CO2_01\");\nvar temp = global.get(\"g_meet_temp_01\");\nvar vocht = global.get(\"g_meet_vocht_01\");\n\n// return {payload: {co2, vocht, temp}};\nmsg.payload = temp\nmsg.topic = \"temp [graden celsius]\"\n// return {payload: temp};\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 680,
+        "wires": [
+            [
+                "d9374b540b46d64c"
+            ]
+        ]
+    },
+    {
+        "id": "5beacda8964c10d9",
+        "type": "debug",
+        "z": "b63fcb1813d36138",
+        "name": "temp",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 250,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "fbbd11def004e3ae",
+        "type": "function",
+        "z": "b63fcb1813d36138",
+        "name": "function 2",
+        "func": "\nvar co2 = global.get(\"g_meet_CO2_01\");\nvar temp = global.get(\"g_meet_temp_01\");\nvar vocht = global.get(\"g_meet_vocht_01\");\n\n// return {payload: {co2, vocht, temp}};\nmsg.payload = vocht\nmsg.topic = \"vocht [0-100% relative vochtigheid]\"\n// return {payload: vocht};\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 720,
+        "wires": [
+            [
+                "d9374b540b46d64c"
+            ]
+        ]
+    },
+    {
+        "id": "c866f0618060149f",
+        "type": "function",
+        "z": "b63fcb1813d36138",
+        "name": "function 3",
+        "func": "\nvar co2 = global.get(\"g_meet_CO2_01\");\nvar temp = global.get(\"g_meet_temp_01\");\nvar vocht = global.get(\"g_meet_vocht_01\");\n\n// return {payload: {co2, vocht, temp}};\nmsg.payload = co2 * 0.1\nmsg.topic = \"co2 (waarde * 10) [ppm]\"\n// return {payload: co2};\nreturn msg",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1386,6 +1528,94 @@
                 "d9374b540b46d64c"
             ]
         ]
+    },
+    {
+        "id": "e5479bacb22da883",
+        "type": "debug",
+        "z": "b63fcb1813d36138",
+        "name": "read set goals",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "01bcf6cf13ceeb42",
+        "type": "ui_toast",
+        "z": "b63fcb1813d36138",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "cron job notidy",
+        "x": 1140,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "68133df8b506b94b",
+        "type": "ui_text",
+        "z": "b63fcb1813d36138",
+        "group": "fd773dbbcabdd020",
+        "order": 18,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "ui scheduler out",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 980,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "064186452ffb49d5",
+        "type": "ui_text",
+        "z": "b63fcb1813d36138",
+        "group": "fd773dbbcabdd020",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "out result",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1820,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "6562f96697c93722",
+        "type": "comment",
+        "z": "b63fcb1813d36138",
+        "name": "### set and save the set goals to file",
+        "info": "",
+        "x": 180,
+        "y": 1160,
+        "wires": []
     },
     {
         "id": "9a2b56362a30a608",
@@ -2383,7 +2613,7 @@
         "label": "",
         "tooltip": "",
         "place": "Select a file",
-        "group": "a25e3f35.7e46c",
+        "group": "bfe48a3e.1b0f4",
         "order": 2,
         "width": "5",
         "height": "1",
@@ -2398,6 +2628,8 @@
         ],
         "payload": "",
         "topic": "",
+        "topicType": "str",
+        "className": "",
         "x": 890,
         "y": 260,
         "wires": [
@@ -2482,7 +2714,7 @@
         "type": "ui_button",
         "z": "664d9258c76c4dce",
         "name": "",
-        "group": "a25e3f35.7e46c",
+        "group": "8e639ac06647d5d1",
         "order": 3,
         "width": "2",
         "height": "1",
@@ -2491,10 +2723,12 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
+        "className": "",
         "icon": "show_chart",
         "payload": "1",
         "payloadType": "str",
         "topic": "",
+        "topicType": "str",
         "x": 90,
         "y": 680,
         "wires": [
@@ -2722,7 +2956,7 @@
         "type": "ui_chart",
         "z": "664d9258c76c4dce",
         "name": "data/average",
-        "group": "a25e3f35.7e46c",
+        "group": "8e639ac06647d5d1",
         "order": 5,
         "width": 0,
         "height": 0,
@@ -2753,6 +2987,8 @@
             "#c5b0d5"
         ],
         "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
         "x": 1190,
         "y": 640,
         "wires": [
@@ -2764,7 +3000,7 @@
         "type": "ui_chart",
         "z": "664d9258c76c4dce",
         "name": "data/average",
-        "group": "a25e3f35.7e46c",
+        "group": "8e639ac06647d5d1",
         "order": 6,
         "width": 0,
         "height": 0,
@@ -2795,6 +3031,8 @@
             "#c5b0d5"
         ],
         "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
         "x": 1190,
         "y": 680,
         "wires": [
@@ -2806,7 +3044,7 @@
         "type": "ui_button",
         "z": "664d9258c76c4dce",
         "name": "",
-        "group": "a25e3f35.7e46c",
+        "group": "8e639ac06647d5d1",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -2815,10 +3053,12 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
+        "className": "",
         "icon": "fa-bomb",
         "payload": "[]",
         "payloadType": "json",
         "topic": "",
+        "topicType": "str",
         "x": 860,
         "y": 800,
         "wires": [
