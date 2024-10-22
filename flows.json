@@ -2595,7 +2595,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "change",
-        "payload": "C:\\Users\\pike\\logs",
+        "payload": "\\data\\data_logs",
         "payloadType": "str",
         "x": 90,
         "y": 220,
@@ -2613,7 +2613,7 @@
         "label": "",
         "tooltip": "",
         "place": "Select a file",
-        "group": "bfe48a3e.1b0f4",
+        "group": "8e639ac06647d5d1",
         "order": 2,
         "width": "5",
         "height": "1",
@@ -2646,9 +2646,11 @@
         "name": "Format data",
         "func": "// format the data for the dropdown\nmsg.options = [];\nfor (var i=0; i<msg.payload.length; i++) {\n    // This is a file\n    obj = {};\n    obj [msg.payload[i].name.replace(/^.*(\\\\|\\/|\\:)/, '')]=msg.payload[i].name;\n    msg.options.push(obj);\n}\nmsg.payload={};\nreturn msg;",
         "outputs": 1,
-        "noerr": 0,
+        "timeout": "",
+        "noerr": 3,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 690,
         "y": 260,
         "wires": [
@@ -2760,11 +2762,13 @@
         "type": "file in",
         "z": "664d9258c76c4dce",
         "name": "",
-        "filename": "",
+        "filename": "filename",
+        "filenameType": "msg",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
+        "allProps": false,
         "x": 440,
         "y": 680,
         "wires": [
@@ -2787,6 +2791,8 @@
         "temp": "",
         "skip": "0",
         "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
         "x": 590,
         "y": 740,
         "wires": [
@@ -2800,15 +2806,18 @@
         "name": "Folder handling",
         "func": "let folder = context.get(\"folder\");\nif (folder===undefined) {\n    folder=\"/\";\n    context.set(\"folder\", folder);\n}\n\nlet hidden = context.get(\"hidden\");\nif (hidden===undefined) {\n    hidden=false;\n    context.set(\"hidden\", hidden);\n}\n\nif (msg.topic===\"up\") {\n    var the_arr = folder.split('/');\n    the_arr.pop();\n    folder=the_arr.join('/'); \n    context.set(\"folder\", folder);\n}\nif (msg.topic===\"change\") {\n    folder=msg.payload;    \n    context.set(\"folder\", folder);\n}\nif (msg.topic===\"hidden\") {\n    hidden=msg.payload;    \n    context.set(\"hidden\", hidden);\n}\n\nmsg.payload = {\"start\":folder, \"hidden\": hidden};\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 300,
         "y": 180,
         "wires": [
             [
                 "993d7272.843ae",
-                "399ac341.7d43bc"
+                "399ac341.7d43bc",
+                "72391a6a2846fd15"
             ]
         ]
     },
@@ -2816,14 +2825,19 @@
         "id": "399ac341.7d43bc",
         "type": "ui_text",
         "z": "664d9258c76c4dce",
-        "group": "a25e3f35.7e46c",
+        "group": "8e639ac06647d5d1",
         "order": 1,
-        "width": "9",
+        "width": "6",
         "height": "1",
         "name": "",
         "label": "Folder:",
         "format": "{{msg.payload.start}}",
         "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
         "x": 500,
         "y": 180,
         "wires": []
@@ -2858,7 +2872,7 @@
         "type": "fs-file-lister",
         "z": "664d9258c76c4dce",
         "name": "Files",
-        "start": "/data/data_logs",
+        "start": "\\",
         "pattern": "*.*",
         "folders": "*",
         "hidden": false,
@@ -2872,7 +2886,8 @@
         "y": 260,
         "wires": [
             [
-                "dd88bd23.37cde"
+                "dd88bd23.37cde",
+                "c332538f02d61452"
             ]
         ]
     },
@@ -3084,5 +3099,107 @@
         "x": 1190,
         "y": 760,
         "wires": []
+    },
+    {
+        "id": "72391a6a2846fd15",
+        "type": "debug",
+        "z": "664d9258c76c4dce",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c332538f02d61452",
+        "type": "debug",
+        "z": "664d9258c76c4dce",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "61769d2fb3cf6b62",
+        "type": "fs-file-lister",
+        "z": "664d9258c76c4dce",
+        "name": "Files",
+        "start": "/",
+        "pattern": "*.*",
+        "folders": "*",
+        "hidden": false,
+        "lstype": "files",
+        "path": true,
+        "single": true,
+        "depth": 0,
+        "stat": true,
+        "showWarnings": false,
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "b06fd17c7d752456"
+            ]
+        ]
+    },
+    {
+        "id": "b06fd17c7d752456",
+        "type": "debug",
+        "z": "664d9258c76c4dce",
+        "name": "files",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "dfa8dc9e43a479cd",
+        "type": "inject",
+        "z": "664d9258c76c4dce",
+        "name": "Init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "change",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "61769d2fb3cf6b62"
+            ]
+        ]
     }
 ]
